@@ -1,5 +1,4 @@
 import os
-import random
 import datetime
 import pytz
 from pyfacebook import models as m
@@ -68,7 +67,7 @@ FIXTURES[m.AdCampaign] = {
 FIXTURES[m.AdImage] = {
     'test_image':
     m.AdImage(**{
-              'file': {'test_image.png': open(MY_DIR + '/test_image.png', 'r')},
+              'file': {'test_image.png': open(MY_DIR + '/test_image.png', 'r').read()},
               }),
 }
 

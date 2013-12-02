@@ -1,14 +1,10 @@
 import time
 import unittest
-import shelve
 import anydbm
 import inflection
 
-from operator import itemgetter
-from nose.tools import ok_, eq_
-from tinymodel import TinyModel
-from pprint import pprint
-
+from caliendo.patch import patch
+from nose.tools import ok_
 from pyfacebook import(
     settings,
     models,
@@ -20,7 +16,6 @@ import get_fixtures
 
 from pyfacebook.utils import(
     first_item,
-    delete_shelf_files,
     json_to_objects,
 )
 
@@ -28,57 +23,31 @@ anydbm._defaultmod = __import__('dumbdbm')
 
 
 class FacebookModelsTest(unittest.TestCase):
+    """ Tests PyFacebook functionality for all Facebook models. """
 
-    """
-    Tests PyFacebook functionality for all Facebook models.
-    If TEST_LIVE_ENDPOINTS is set to True, then this actually calls the Facebook Graph API.
-    Otherwise, we use shelved data to mock out the endpoint calls.
-
-    If you run this test with TEST_LIVE_ENDPOINTS set to True, then it will replace the current shelved data.
-
-    """
-    test_live_endpoints = settings.__dict__.get('TEST_LIVE_ENDPOINTS')
     limit_live_results = settings.__dict__.get('LIVE_TEST_RESULTSET_LIMIT')
-    shelf_filename = str(__file__).split(".")[0]
 
     app_id = settings.__dict__.get('FACEBOOK_TEST_APP_ID')
     app_secret = settings.__dict__.get('FACEBOOK_TEST_APP_SECRET')
     test_token_text = settings.__dict__.get('FACEBOOK_TEST_ACCESS_TOKEN')
     account_id = settings.__dict__.get('FACEBOOK_TEST_ACCOUNT_ID')
-    mock_account_id = settings.__dict__.get('MOCK_DATA_ACCOUNT_ID')
 
-    if test_live_endpoints:
-        print "TESTING LIVE ENDPOINTS WITH LIMIT", (limit_live_results or "INFINITE")
-        if not(app_id and app_secret and test_token_text and account_id):
-            raise Exception("MISSING SETTINGS FOR LIVE TEST!\n"
-                            "FACEBOOK_TEST_APP_ID, FACEBOOK_TEST_APP_SECRET, FACEBOOK_TEST_ACCESS_TOKEN\n"
-                            "AND FACEBOOK_TEST_ACCOUNT_ID ALL NEED TO BE DEFINED!")
-        account_id = account_id if account_id[0:4] == 'act_' else 'act_' + account_id
-        delete_shelf_files(shelf_filename)
-    else:
-        if not(mock_account_id):
-            raise Exception("MISSING SETTINGS FOR MOCK TEST: MOCK_DATA_ACCOUNT_ID NEEDS TO BE DEFINED")
-        print "TESTING MOCK ENDPOINTS USING SHELVED DATA"
-        account_id = mock_account_id if mock_account_id[0:4] == 'act_' else 'act_' + mock_account_id
+    print "TESTING LIVE ENDPOINTS WITH LIMIT", (limit_live_results or "INFINITE")
+    if not(app_id and app_secret and test_token_text and account_id):
+        raise Exception("MISSING SETTINGS FOR LIVE TEST!\n"
+                        "FACEBOOK_TEST_APP_ID, FACEBOOK_TEST_APP_SECRET, FACEBOOK_TEST_ACCESS_TOKEN\n"
+                        "AND FACEBOOK_TEST_ACCOUNT_ID ALL NEED TO BE DEFINED!")
+    account_id = account_id if account_id[0:4] == 'act_' else 'act_' + account_id
 
     def setUp(self):
-        """
-        Set up models list, PyFacebook instance and shelf
+        """ Set up models list and PyFacebook instance """
 
-        """
         get_models = [val for key, val in models.__dict__.items() if isinstance(val, type) and models.FacebookModel in val.__bases__]
         get_models.insert(0, get_models.pop(get_models.index(models.AdAccount)))
         self.get_models = get_models
         self.get_model_ids = {models.AdAccount: [self.account_id]}
 
-        self.shelf = shelve.open(self.shelf_filename, protocol=-1)
-        if self.test_live_endpoints:
-            self.pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text, put_on_shelf=self.shelf)
-        else:
-            self.pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text, get_from_shelf=self.shelf)
-
-    def tearDown(self):
-        self.shelf.close()
+        self.pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text)
 
     def __handle_results(self, results):
         """
@@ -93,7 +62,7 @@ class FacebookModelsTest(unittest.TestCase):
             self.get_model_ids[type(first_obj)] = [first_obj.id]
         return first_obj
 
-    def __test_single_endpoint(self, model, http_method, id=None, connection=None, return_json=True, **kwargs):
+    def _test_single_endpoint(self, model, http_method, id=None, connection=None, return_json=True, **kwargs):
         """
         Tests a single Facebook Ads endpoint
 
@@ -101,12 +70,6 @@ class FacebookModelsTest(unittest.TestCase):
         :param str connection: The name of the connection, if we are testing one.
 
         """
-        print "\n\n================"
-
-        print "TESTING:"
-        pprint(locals())
-        shelf_key = str(id or model.__name__.lower()) + "__" + (connection or '') + "__" + http_method
-
         test_method = getattr(self.pyfb, http_method.lower())
         results = test_method(model=model, id=id, connection=connection, return_json=return_json, **kwargs)
 
@@ -135,13 +98,17 @@ class FacebookModelsTest(unittest.TestCase):
                 dependent_value = getattr(dependent_obj, 'id', None) or getattr(dependent_obj, 'hash')
                 setattr(fixture_obj, field_name, dependent_value)
 
+    @patch('pyfacebook.PyFacebook.get')
     def test_exchange_access_token(self):
         """
         Test for the fb_exchange_token functionality of the /oauth/access_token endpoint
 
         """
-        new_token = self.pyfb.exchange_access_token(current_token=self.pyfb.access_token, app_id=self.app_id, app_secret=self.app_secret)
+        self.pyfb.exchange_access_token(current_token=self.pyfb.access_token, app_id=self.app_id, app_secret=self.app_secret)
 
+    @patch('pyfacebook.PyFacebook.post')
+    @patch('pyfacebook.PyFacebook.get')
+    @patch('pyfacebook.PyFacebook.delete')
     def test_graph_api(self):
         """
         Test for the POST, GET and DELETE functionality (in that order) of all defined FacebookModels and their connections.
@@ -162,22 +129,22 @@ class FacebookModelsTest(unittest.TestCase):
         """
         # test POST using fixtures
         for post_dict in post_fixtures.POST_MODELS:
-            if self.test_live_endpoints:
-                time.sleep(7)
+            # if self.test_live_endpoints:
+            time.sleep(7)
             model = post_dict['model']
             for fixture_name, fixture_obj in post_fixtures.FIXTURES[model].items():
                 # set ids or hashes of dependent objects if appropriate
                 self.__add_dependent_ids(post_dict.get('dependent_fields', {}), fixture_obj)
 
                 if hasattr(fixture_obj, 'file'):
-                    post_params = {f.field_def.title: f.value for f in fixture_obj.FIELDS}
+                    post_params = dict([(f.field_def.title, f.value) for f in fixture_obj.FIELDS])
                 else:
                     post_params = fixture_obj.to_json(return_dict=True)
 
                 post_params.pop('id', None)
                 post_params.pop('hash', None)
                 connection = inflection.pluralize(model.__name__.lower())
-                return_obj = self.__test_single_endpoint(model=model, http_method='POST', id=self.account_id, connection=connection, **post_params)
+                return_obj = self._test_single_endpoint(model=model, http_method='POST', id=self.account_id, connection=connection, **post_params)
                 if hasattr(return_obj, 'id'):
                     fixture_obj.id = return_obj.id
                 elif hasattr(return_obj, 'hash'):
@@ -187,14 +154,14 @@ class FacebookModelsTest(unittest.TestCase):
         for model in self.get_models:
             if model not in self.get_model_ids.keys():
                 print "\n\n==== SKIPPING GET TEST! NO TEST ID FOR", model.__name__, "===="
-            else:
-                for id in self.get_model_ids[model]:
-                    self.__test_single_endpoint(model=model, http_method='GET', id=id, limit=self.limit_live_results)
-                    for connection in getattr(model, 'CONNECTIONS', []):
-                        connection_field_def = next(f for f in model.FIELD_DEFS if f.title == connection)
-                        child_model = first_item(connection_field_def.allowed_types[0])
-                        extra_params = get_fixtures.CONNECTIONS.get(model, {}).get(connection, {})
-                        self.__test_single_endpoint(model=child_model, http_method='GET', id=id, connection=connection, limit=self.limit_live_results, **extra_params)
+                continue
+            for id in self.get_model_ids[model]:
+                self._test_single_endpoint(model=model, http_method='GET', id=id, limit=self.limit_live_results)
+                for connection in getattr(model, 'CONNECTIONS', []):
+                    connection_field_def = next(f for f in model.FIELD_DEFS if f.title == connection)
+                    child_model = first_item(connection_field_def.allowed_types[0])
+                    extra_params = get_fixtures.CONNECTIONS.get(model, {}).get(connection, {})
+                    self._test_single_endpoint(model=child_model, http_method='GET', id=id, connection=connection, limit=self.limit_live_results, **extra_params)
 
         # test DELETE by deleting posted models from above
         post_fixtures.POST_MODELS.reverse()
@@ -202,4 +169,4 @@ class FacebookModelsTest(unittest.TestCase):
             model = post_dict['model']
             for fixture_name, fixture_obj in post_fixtures.FIXTURES[model].items():
                 if hasattr(fixture_obj, 'id'):
-                    ok_(self.__test_single_endpoint(model=model, id=fixture_obj.id, http_method='DELETE', return_json=False))
+                    ok_(self._test_single_endpoint(model=model, id=fixture_obj.id, http_method='DELETE', return_json=False))
