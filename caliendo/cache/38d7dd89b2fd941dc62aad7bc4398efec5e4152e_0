@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'get'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVdata\np1\n(lp2\n(dp3\nVrole\np4\nI1002\nsVid\np5\nI122869\nsVpermissions\np6\n(lp7\nI2\naI3\naI4\naI7\nasa(dp8\nVrole\np9\nI1002\nsVid\np10\nI12702029\nsVpermissions\np11\n(lp12\nI2\naI3\naI4\naI7\nasa(dp13\nVrole\np14\nI1002\nsVid\np15\nI1097542613\nsVpermissions\np16\n(lp17\nI2\naI3\naI4\naI7\nasa(dp18\nVrole\np19\nI1002\nsVid\np20\nI1338950702\nsVpermissions\np21\n(lp22\nI2\naI3\naI4\naI7\nasa(dp23\nVrole\np24\nI1002\nsVid\np25\nI100000510317100\nsVpermissions\np26\n(lp27\nI2\naI3\naI4\naI7\nasa(dp28\nVrole\np29\nI1002\nsVid\np30\nI100002364203584\nsVpermissions\np31\n(lp32\nI2\naI3\naI4\naI7\nasa(dp33\nVrole\np34\nI1002\nsVid\np35\nI100003945960605\nsVpermissions\np36\n(lp37\nI2\naI3\naI4\naI7\nasa(dp38\nVrole\np39\nI1002\nsVid\np40\nI100003971492718\nsVpermissions\np41\n(lp42\nI2\naI3\naI4\naI7\nasa(dp43\nVrole\np44\nI1002\nsVid\np45\nI100003977904582\nsVpermissions\np46\n(lp47\nI2\naI3\naI4\naI7\nasa(dp48\nVrole\np49\nI1001\nsVid\np50\nI100004079893592\nsVpermissions\np51\n(lp52\nI1\naI2\naI3\naI4\naI5\naI7\nasa(dp53\nVrole\np54\nI1002\nsVid\np55\nI100005359264964\nsVpermissions\np56\n(lp57\nI2\naI3\naI4\naI7\nasas.'
+p8
+sS'hash'
+p9
+S'38d7dd89b2fd941dc62aad7bc4398efec5e4152e'
+p10
+sS'stack'
+p11
+S'get util.py get_stack facade.py cache patch.py patch_with facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.

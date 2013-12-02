@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'get'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"(dp0\nS'data'\np1\n(lp2\n(dp3\nVtargeting\np4\n(dp5\nVconnections\np6\n(lp7\n(dp8\nVid\np9\nV481523265256333\np10\nsVname\np11\nVDiscotech\np12\nsasVage_max\np13\nI50\nsVrelationship_statuses\np14\n(lp15\nI1\naI2\naI3\nasVcountries\np16\n(lp17\nVUS\np18\naVGB\np19\nasVconjunctive_user_adclusters\np20\n(lp21\n(dp22\nVid\np23\nV6002714885172\np24\nsVname\np25\nVCooking\np26\nsa(dp27\nVid\np28\nV6002714886772\np29\nsVname\np30\nVFood & Dining\np31\nsasVeducation_statuses\np32\n(lp33\nI3\nasVwork_networks\np34\n(lp35\n(dp36\nVid\np37\nV50431654\np38\nsVname\np39\nVMicrosoft\np40\nsa(dp41\nVid\np42\nV50446992\np43\nsVname\np44\nVMindShare\np45\nsasVbroad_age\np46\nI1\nsVpage_types\np47\n(lp48\nVdesktop\np49\nasVexcluded_connections\np50\n(lp51\n(dp52\nVid\np53\nV481523265256333\np54\nsVname\np55\nVDiscotech\np56\nsasVregions\np57\n(lp58\n(dp59\nVid\np60\nV1\np61\nsVname\np62\nVAlabama\np63\nsa(dp64\nVid\np65\nV2\np66\nsVname\np67\nVAlaska\np68\nsasVcollege_networks\np69\n(lp70\n(dp71\nVid\np72\nV16777217\np73\nsVname\np74\nVHarvard\np75\nsa(dp76\nVid\np77\nV16777445\np78\nsVname\np79\nVHartford\np80\nsasVradius\np81\nV10\np82\nsVexcluded_user_adclusters\np83\n(lp84\n(dp85\nVid\np86\nV6002714898572\np87\nsVname\np88\nVSmall Business Owners\np89\nsasVage_min\np90\nI18\nsVkeywords\np91\n(lp92\nV#Red Bull\np93\naVmovies\np94\nasVgenders\np95\n(lp96\nI1\nasVcollege_majors\np97\n(lp98\nVenglish\np99\naVmathematics\np100\nasVcities\np101\n(lp102\n(dp103\nVid\np104\nV2418956\np105\nsVname\np106\nVDublin, CA\np107\nsa(dp108\nVid\np109\nV2421215\np110\nsVname\np111\nVPalo Alto, CA\np112\nsasVinterested_in\np113\n(lp114\nI1\nasVlocales\np115\n(lp116\nV24\np117\naV6\np118\nassVname\np119\nVtest_adgroup\np120\nsVbid_info\np121\n(dp122\nVIMPRESSIONS\np123\nI2\nssVcampaign_id\np124\nI6012356060551\nsVlast_updated_by_app_id\np125\nI481523265256333\nsVupdated_time\np126\nV2013-12-03T09:18:01-0800\np127\nsVtracking_specs\np128\n(lp129\n(dp130\nVpage\np131\n(lp132\nI238205562866018\nasVaction.type\np133\n(lp134\nVpage_engagement\np135\nasasVadgroup_status\np136\nVPENDING_REVIEW\np137\nsVcreated_time\np138\nV2013-12-03T09:18:01-0800\np139\nsVbid_type\np140\nVCPM\np141\nsVcreative_ids\np142\n(lp143\nI6012233586351\nasVid\np144\nV6012356066351\np145\nsVaccount_id\np146\nI106929496119713\nsas."
+p8
+sS'hash'
+p9
+S'0d43e277cb47643b5dcaedf137810f4739f2c371'
+p10
+sS'stack'
+p11
+S'get util.py get_stack facade.py cache patch.py patch_with facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.

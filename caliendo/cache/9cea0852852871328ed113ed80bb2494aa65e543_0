@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'patch_with'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI5\nsVlimit\np2\nI1\nsVpaging\np3\n(dp4\nVcursors\np5\n(dp6\nVafter\np7\nVNjAxMjIzMzU4NjU1MQ==\np8\nsVbefore\np9\nVNjAxMjIzMzU4NjU1MQ==\np10\nssVnext\np11\nVhttps://graph.facebook.com/act_106929496119713/adcreatives?fields=preview_url,id,story_id,image_hash,name,auto_update,body,object_id,image_url,related_fan_page,type,action_spec,title,url_tags,link_url&limit=1&account_id=106929496119713&access_token=CAAG18V8tO40BAKPLqBiN7Id9TazCZCx4ZAjan4pkKnylsnUgR8iUam2TPnlHyHNrtFjnIIxZCwjqMJqtrbtznGYhkqvLnizRNpwwQ1UdSuZAgabUrVdnfrtEhsQlFPImkM4JkpYuID5BSUUyBzZARoIMkel7fK8W7LizBS5cTIrC938gUBfRF&after=NjAxMjIzMzU4NjU1MQ%3D%3D\np12\nssVdata\np13\n(lp14\n(dp15\nVimage_hash\np16\nV68e07662e829b8330cc740b523ff7847\np17\nsVname\np18\nVtest_type_27_creativ-2013-11-27-9c414267d701fa93380865d89be059ae\np19\nsVstory_id\np20\nI609720135714557\nsVpreview_url\np21\nVhttps://www.facebook.com/ads/api/creative_preview.php?cid=6012233586551\np22\nsVobject_id\np23\nI238205562866018\nsVimage_url\np24\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-frc3/1354164_6012062867751_1697211487_n.png\np25\nsVurl_tags\np26\nVfoo=bar&bat=baz\np27\nsVtype\np28\nI27\nsVid\np29\nV6012233586551\np30\nsas.'
+p8
+sS'hash'
+p9
+S'9cea0852852871328ed113ed80bb2494aa65e543'
+p10
+sS'stack'
+p11
+S'patch_with util.py get_stack facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.

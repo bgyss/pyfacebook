@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'post'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"(dp0\nS'data'\np1\n(dp2\nVtest_image.png\np3\n(dp4\nVurl\np5\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-frc3/1354164_6012062867751_1697211487_n.png\np6\nsVhash\np7\nV68e07662e829b8330cc740b523ff7847\np8\nsss."
+p8
+sS'hash'
+p9
+S'0fe88896a94020240167b055ea84ae1592f1cde8'
+p10
+sS'stack'
+p11
+S'post util.py get_stack facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.

@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'get'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI1\nsVlimit\np2\nV1\np3\nsVpaging\np4\n(dp5\nVcursors\np6\n(dp7\nVafter\np8\nVNjAxMjM1NjA2MDU1MQ==\np9\nsVbefore\np10\nVNjAxMjM1NjA2MDU1MQ==\np11\nsssVdata\np12\n(lp13\n(dp14\nVname\np15\nVtest_campaign\np16\nsVstart_time\np17\nV2014-01-02T03:17:24-0800\np18\nsVupdated_time\np19\nV2013-12-03T09:17:34-0800\np20\nsVlifetime_budget\np21\nI100\nsVend_time\np22\nV2014-01-03T03:17:24-0800\np23\nsVcreated_time\np24\nV2013-12-03T09:17:34-0800\np25\nsVcampaign_status\np26\nI2\nsVid\np27\nV6012356060551\np28\nsVbudget_remaining\np29\nI100\nsVaccount_id\np30\nI106929496119713\nsasVoffset\np31\nI0\ns.'
+p8
+sS'hash'
+p9
+S'72f3e8c774eec6599b594a32da94900b2d2b0cca'
+p10
+sS'stack'
+p11
+S'get util.py get_stack facade.py cache patch.py patch_with facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.

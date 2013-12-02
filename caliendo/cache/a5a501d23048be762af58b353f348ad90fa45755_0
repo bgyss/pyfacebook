@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'patch_with'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI94\nsVlimit\np2\nI1\nsVpaging\np3\n(dp4\nVnext\np5\nVhttps://graph.facebook.com/act_106929496119713/adimages?fields=url,hash&limit=1&account_id=106929496119713&access_token=CAAG18V8tO40BAKPLqBiN7Id9TazCZCx4ZAjan4pkKnylsnUgR8iUam2TPnlHyHNrtFjnIIxZCwjqMJqtrbtznGYhkqvLnizRNpwwQ1UdSuZAgabUrVdnfrtEhsQlFPImkM4JkpYuID5BSUUyBzZARoIMkel7fK8W7LizBS5cTIrC938gUBfRF&offset=1&__after_id=106929496119713%3A68e07662e829b8330cc740b523ff7847\np6\nssVdata\np7\n(dp8\nV68e07662e829b8330cc740b523ff7847\np9\n(dp10\nVurl\np11\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-frc3/1354164_6012062867751_1697211487_n.png\np12\nsVhash\np13\nV68e07662e829b8330cc740b523ff7847\np14\nsVid\np15\nV106929496119713:68e07662e829b8330cc740b523ff7847\np16\nsssVoffset\np17\nI0\ns.'
+p8
+sS'hash'
+p9
+S'a5a501d23048be762af58b353f348ad90fa45755'
+p10
+sS'stack'
+p11
+S'patch_with util.py get_stack facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.

@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'patch_with'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"(dp0\nS'data'\np1\n(lp2\n(dp3\nVcampaign_id\np4\nI6012356060551\nsVsocial_unique_clicks\np5\nI0\nsVunique_impressions\np6\nI0\nsVstart_time\np7\nNsVspent\np8\nI0\nsVactions\np9\nNsVclicks\np10\nI0\nsVinline_actions\np11\n(dp12\nVcomment\np13\nI0\nsVvideo_play\np14\nI0\nsVtitle_clicks\np15\nI0\nsVlike\np16\nI0\nsVrsvp_maybe\np17\nI0\nsVpost_like\np18\nI0\nsVphoto_view\np19\nI0\nsVrsvp_yes\np20\nI0\nsVlink_click\np21\nI0\nsVquestion_vote\np22\nI0\nssVsocial_clicks\np23\nI0\nsVsocial_impressions\np24\nI0\nsVadgroup_id\np25\nI6012356066351\nsVsocial_unique_impressions\np26\nI0\nsVsocial_spent\np27\nI0\nsVimpressions\np28\nI0\nsVnewsfeed_position\np29\nNsVid\np30\nV6012356066351/stats/0/1386091088\np31\nsVunique_clicks\np32\nI0\nsVend_time\np33\nV2013-12-03T17:18:08+0000\np34\nsas."
+p8
+sS'hash'
+p9
+S'43a3841b970da3296d476ed830b2e4ae70e3f290'
+p10
+sS'stack'
+p11
+S'patch_with util.py get_stack facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.

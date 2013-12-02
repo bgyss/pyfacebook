@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'PyFacebook'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'get'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI1\nsVlimit\np2\nI1\nsVpaging\np3\n(dp4\nVcursors\np5\n(dp6\nVafter\np7\nVNjAxMjM1NjA2NjM1MQ==\np8\nsVbefore\np9\nVNjAxMjM1NjA2NjM1MQ==\np10\nsssVdata\np11\n(lp12\n(dp13\nVtargeting\np14\n(dp15\nVconnections\np16\n(lp17\n(dp18\nVid\np19\nV481523265256333\np20\nsVname\np21\nVDiscotech\np22\nsasVage_max\np23\nI50\nsVrelationship_statuses\np24\n(lp25\nI1\naI2\naI3\nasVcountries\np26\n(lp27\nVUS\np28\naVGB\np29\nasVconjunctive_user_adclusters\np30\n(lp31\n(dp32\nVid\np33\nV6002714885172\np34\nsVname\np35\nVCooking\np36\nsa(dp37\nVid\np38\nV6002714886772\np39\nsVname\np40\nVFood & Dining\np41\nsasVeducation_statuses\np42\n(lp43\nI3\nasVwork_networks\np44\n(lp45\n(dp46\nVid\np47\nV50431654\np48\nsVname\np49\nVMicrosoft\np50\nsa(dp51\nVid\np52\nV50446992\np53\nsVname\np54\nVMindShare\np55\nsasVbroad_age\np56\nI1\nsVpage_types\np57\n(lp58\nVdesktop\np59\nasVexcluded_connections\np60\n(lp61\n(dp62\nVid\np63\nV481523265256333\np64\nsVname\np65\nVDiscotech\np66\nsasVregions\np67\n(lp68\n(dp69\nVid\np70\nV1\np71\nsVname\np72\nVAlabama\np73\nsa(dp74\nVid\np75\nV2\np76\nsVname\np77\nVAlaska\np78\nsasVcollege_networks\np79\n(lp80\n(dp81\nVid\np82\nV16777217\np83\nsVname\np84\nVHarvard\np85\nsa(dp86\nVid\np87\nV16777445\np88\nsVname\np89\nVHartford\np90\nsasVradius\np91\nV10\np92\nsVexcluded_user_adclusters\np93\n(lp94\n(dp95\nVid\np96\nV6002714898572\np97\nsVname\np98\nVSmall Business Owners\np99\nsasVage_min\np100\nI18\nsVkeywords\np101\n(lp102\nV#Red Bull\np103\naVmovies\np104\nasVgenders\np105\n(lp106\nI1\nasVcollege_majors\np107\n(lp108\nVenglish\np109\naVmathematics\np110\nasVcities\np111\n(lp112\n(dp113\nVid\np114\nV2418956\np115\nsVname\np116\nVDublin, CA\np117\nsa(dp118\nVid\np119\nV2421215\np120\nsVname\np121\nVPalo Alto, CA\np122\nsasVinterested_in\np123\n(lp124\nI1\nasVlocales\np125\n(lp126\nV24\np127\naV6\np128\nassVname\np129\nVtest_adgroup\np130\nsVbid_info\np131\n(dp132\nVIMPRESSIONS\np133\nI2\nssVcampaign_id\np134\nI6012356060551\nsVlast_updated_by_app_id\np135\nI481523265256333\nsVupdated_time\np136\nV2013-12-03T09:18:01-0800\np137\nsVtracking_specs\np138\n(lp139\n(dp140\nVpage\np141\n(lp142\nI238205562866018\nasVaction.type\np143\n(lp144\nVpage_engagement\np145\nasasVadgroup_status\np146\nVPENDING_REVIEW\np147\nsVcreated_time\np148\nV2013-12-03T09:18:01-0800\np149\nsVbid_type\np150\nVCPM\np151\nsVcreative_ids\np152\n(lp153\nI6012233586351\nasVid\np154\nV6012356066351\np155\nsVaccount_id\np156\nI106929496119713\nsasVoffset\np157\nI0\ns.'
+p8
+sS'hash'
+p9
+S'df4b34a61bf1dbc918a29b8e0e4a99fe87f78db1'
+p10
+sS'stack'
+p11
+S'get util.py get_stack facade.py cache patch.py patch_with facade.py cache patch.py patch_with models_test.py _test_single_endpoint models_test.py test_graph_api patch.py patched_test '
+p12
+s.
